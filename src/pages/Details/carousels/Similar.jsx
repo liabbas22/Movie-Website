@@ -8,12 +8,14 @@ const Similar = ({ mediaType, id }) => {
   const title = mediaType === "movie" ? "Similar Movies" : "Similar TV Shows";
 
   return (
-    <Carousel
-      title={title}
-      data={data?.results}
-      loading={loading}
-      endpoint={mediaType}
-    />
+    <>
+        <Carousel
+          title={title}
+          data={data?.results}
+          loading={loading}
+          endpoint={mediaType}
+        />
+    </>
   );
 };
 // Similar Type Not Working on Click Because it don't have media type
