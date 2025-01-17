@@ -19,6 +19,7 @@ const Carousel = ({ data, loading, endPoint, title }) => {
   const { url } = useSelector((state) => state.home);
   const navigation = (dir) => {
     const container = carouselContainer.current;
+
     const scrollAmount =
       dir === "left"
         ? container.scrollLeft - (container.offsetWidth + 20)
@@ -56,8 +57,8 @@ const Carousel = ({ data, loading, endPoint, title }) => {
         {!loading ? (
           <div className="carouselItems" ref={carouselContainer}>
             {data?.map((item) => {
-              const posterUrl = item.poster_path
-                ? url.poster + item.poster_path
+              const posterUrl = item?.poster_path
+                ? url?.poster + item?.poster_path
                 : "/Assets/PageNotFound.jpg";
 
               return (
@@ -65,7 +66,7 @@ const Carousel = ({ data, loading, endPoint, title }) => {
                   key={item.id}
                   className="carouselItem"
                   onClick={() =>
-                    navigate(`/${item.media_type || endPoint}/${item.id}`)
+                    navigate(`/${item?.media_type || endPoint}/${item.id}`)
                   }
                 >
                   <div className="posterBlock">

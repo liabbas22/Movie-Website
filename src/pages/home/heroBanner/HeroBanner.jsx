@@ -26,6 +26,8 @@ const HeroBanner = () => {
 
   const { url } = useSelector((state) => state.home);
   const { data, loading } = UseFatch("/movie/upcoming");
+  // console.log("Url Backdrop",data);
+  
   useEffect(() => {
     if (data && url?.backdrop) {
       const bg =

@@ -15,6 +15,9 @@ const Header = () => {
   const navigate = useNavigate();
   const loaction = useLocation();
 
+  console.log(loaction);
+  
+
   const openSearch = () => {
     setMobileMenu(false);
     setShowSearch(true);
